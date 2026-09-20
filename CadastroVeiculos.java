@@ -100,3 +100,36 @@ public class CadastroVeiculos {
             System.out.println("Nenhum veículo cadastrado.");
             return;
         }
+
+           for (Veiculo veiculo : veiculos) {
+            System.out.println("---------------------------");
+            System.out.println("Marca : " + veiculo.getMarca());
+            System.out.println("Modelo: " + veiculo.getModelo());
+            System.out.println("Ano   : " + veiculo.getAno());
+            System.out.println("Placa : " + veiculo.getPlaca());
+        }
+    }
+
+    public static void consultarVeiculo() {
+
+        System.out.println("\n--- Consulta de Veículo ---");
+
+        System.out.print("Digite a placa: ");
+        String placa = scanner.nextLine();
+
+        for (Veiculo veiculo : veiculos) {
+
+            if (veiculo.getPlaca().equalsIgnoreCase(placa)) {
+
+                System.out.println("\nVeículo encontrado!");
+                System.out.println("Marca : " + veiculo.getMarca());
+                System.out.println("Modelo: " + veiculo.getModelo());
+                System.out.println("Ano   : " + veiculo.getAno());
+                System.out.println("Placa : " + veiculo.getPlaca());
+
+                return;
+            }
+        }
+
+          System.out.println("Nenhum veículo encontrado com essa placa.");
+    }
