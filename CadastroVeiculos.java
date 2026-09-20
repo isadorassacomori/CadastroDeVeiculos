@@ -133,3 +133,16 @@ public class CadastroVeiculos {
 
           System.out.println("Nenhum veículo encontrado com essa placa.");
     }
+
+    public static boolean placaExiste(String placa) {
+
+        for (Veiculo veiculo : veiculos) {
+
+            if (veiculo.getPlaca().equalsIgnoreCase(placa)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
