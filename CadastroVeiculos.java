@@ -71,3 +71,32 @@ public class CadastroVeiculos {
                 System.out.println("Ano inválido! Digite um ano entre 1900 e " + (anoAtual + 1));
             }
         }
+
+    String placa;
+
+        while (true) {
+            System.out.print("Placa: ");
+            placa = scanner.nextLine();
+
+            if (!placaExiste(placa)) {
+                break;
+            } else {
+                System.out.println("Já existe um veículo cadastrado com essa placa.");
+            }
+        }
+
+        Veiculo veiculo = new Veiculo(marca, modelo, ano, placa);
+
+        veiculos.add(veiculo);
+
+        System.out.println("Veículo cadastrado com sucesso!");
+    }
+
+    public static void listarVeiculos() {
+
+         System.out.println("\n--- Lista de Veículos ---");
+
+        if (veiculos.isEmpty()) {
+            System.out.println("Nenhum veículo cadastrado.");
+            return;
+        }
