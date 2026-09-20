@@ -46,3 +46,28 @@ public class CadastroVeiculos {
 
          } while (opcao != 0);
     }
+
+    public static void cadastrarVeiculo() {
+
+        System.out.println("\n--- Cadastro de Veículo ---");
+
+        System.out.print("Marca: ");
+        String marca = scanner.nextLine();
+
+        System.out.print("Modelo: ");
+        String modelo = scanner.nextLine();
+
+        int anoAtual = LocalDate.now().getYear();
+        int ano;
+
+        while (true) {
+            System.out.print("Ano: ");
+            ano = scanner.nextInt();
+            scanner.nextLine();
+
+            if (ano >= 1900 && ano <= anoAtual + 1) {
+                 break;
+            } else {
+                System.out.println("Ano inválido! Digite um ano entre 1900 e " + (anoAtual + 1));
+            }
+        }
