@@ -19,3 +19,30 @@ public class CadastroVeiculos {
             System.out.println("3 - Consultar Veículo");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
+
+            opcao = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcao) {
+                case 1:
+                    cadastrarVeiculo();
+                    break;
+
+                case 2:
+                    listarVeiculos();
+                    break;
+
+                case 3:
+                    consultarVeiculo();
+                    break;
+
+                case 0:
+                    System.out.println("Sistema encerrado.");
+                    break;
+
+                    default:
+                    System.out.println("Opção inválida.");
+            }
+
+         } while (opcao != 0);
+    }
